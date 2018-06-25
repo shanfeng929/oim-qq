@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.im.server.general.manage.common.bean.User">
+
+	<select id="getUserByAccount" parameterType="string" resultType="map">
+		select * from im_user where `account`=#{account}
+	</select>
+
+	<select id="queryList" parameterType="map" resultType="map">
+		select * from im_user
+		<where>	
+			<if test="queryText != null and queryText != ''">
+			and (name like "%"#{queryText}"%") 
+			or ( account like "%"#{queryText}"%")
+			or ( email like "%"#{queryText}"%")
+			or ( nickname like "%"#{queryText}"%")
+			or ( mobile like "%"#{queryText}"%")
+			</if>	
+			<if test="name != null and name != ''">and name like "%"#{name}"%"</if>	
+	   		<if test="mobile != null and mobile != ''">and mobile like "%"#{mobile}"%"</if>
+	   		<if test="gender != null and gender != ''">and gender = #{gender}</if>   		
+	   		<if test="whereSQL != null and whereSQL != ''">${whereSQL}</if>
+	   	</where>
+	   	<if test="orderBy != null and orderBy != ''">${orderBy}</if>
+	   	<if test="limit != null and limit != ''">${limit}</if>
+	</select>
+</mapper>

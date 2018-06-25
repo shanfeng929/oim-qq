@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>OIM</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <link rel="shortcut icon" href="favicon.ico" />
+        <link href="css/wc.css" rel="stylesheet" type="text/css"/>
+        <link href="js/lib/jquery-custom-scrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" >
+
+        <script src="js/lib/jquery/jquery-3.2.1.min.js"></script>
+        <script src="js/lib/jquery-custom-scrollbar/jquery.mCustomScrollbar.js"></script>
+    </head>
+    <body>
+
+        <div class="main">
+            <div class="main_inner" >
+                <!--begin panel-->
+                <div class="panel">
+                    <!--begin header-->
+                    <div class="header">
+                        <div class="avatar">
+                            <img class="img" src="images/common/head/user/1.png" alt="" >
+                        </div>
+                        <div class="info">
+                            <h3 class="nickname">
+                                <span class="display_name">忧郁de星辰</span>
+                                <a class="opt" href="javascript:;" ><i class="web_wechat_add"></i></a>
+                            </h3>
+                        </div>
+                    </div>
+                    <!--end header-->
+                    <!--begin search-->
+                    <div class="search_bar" id="search_bar">
+                        <i class="web_wechat_search"></i>
+                        <input class="frm_search" type="text" placeholder="搜索">
+                    </div>
+                    <!--end search-->
+                    <!--begin tab-->
+                    <div class="tab">
+                        <div class="tab_item">
+                            <a class="chat" title="聊天" href="#"><i class="web_wechat_tab_chat web_wechat_tab_chat_hl" ></i></a>
+                        </div>
+                        <div class="tab_item" >
+                            <a class="chat" title="阅读" href="#"><i class="web_wechat_tab_public" ></i></a>
+                        </div>
+                        <div class="tab_item">
+                            <a class="chat" title="通讯录" href="#"><i class="web_wechat_tab_friends"></i></a>
+                        </div>
+                    </div>
+                    <!--end tab-->
+
+                    <!--begin nav view-->
+                    <!-- uiView: navView -->
+                    <div  id="navView" class=""></div>
+
+                    <div class="nav_view"  style="visibility: visible; width: auto;">
+
+                        <div class="scroll-wrapper contact_list scrollbar">
+
+                            <div class="">
+                                <!-- ngIf: item.type=="header" -->
+                                <h4 class="contact_title">群组</h4><!-- end ngIf: item.type=="header" -->
+                                <!-- ngIf: item.type!="header" -->
+                            </div>
+                            <div class="">
+                                <!-- ngIf: item.type=="header" -->
+                                <!-- ngIf: item.type!="header" -->
+                                <div class="">
+                                    <!-- ngIf: showOrderSymbol&&user.MMC -->
+                                    <div class="contact_item " >
+                                        <div class="avatar">
+                                            <img class="img" src="images/common/head/user/2.png" alt="">
+                                        </div>
+                                        <div class="info">
+                                            <h4 class="nickname" >1202麻将室</h4>
+                                        </div>
+                                    </div>
+                                </div><!-- end ngIf: item.type!="header" -->
+                            </div>
+
+                            <div class="">
+                                <!-- ngIf: item.type=="header" -->
+                                <!-- ngIf: item.type!="header" -->
+                                <div class="">
+                                    <!-- ngIf: showOrderSymbol&&user.MMC -->
+                                    <div class="contact_item ">
+                                        <div class="avatar">
+                                            <img class="img" src="images/common/head/user/2.png" alt="">
+                                        </div>
+                                        <div class="info">
+                                            <h4 class="nickname">A-Griezmann,熟悉or陌生,chenzdh,烙灵,卧狼</h4>
+                                        </div>
+                                    </div>
+                                </div><!-- end ngIf: item.type!="header" -->
+                            </div>
+
+                            <div class="">
+                                <!-- ngIf: item.type=="header" -->
+                                <h4 class="contact_title">A</h4>
+                                <!-- end ngIf: item.type=="header" -->
+                                <!-- ngIf: item.type!="header" -->
+                            </div>
+
+                            <div class="">
+                                <!-- ngIf: item.type=="header" -->
+                                <!-- ngIf: item.type!="header" -->
+                                <div class=" active">
+                                    <!-- ngIf: showOrderSymbol&&user.MMC -->
+                                    <div class="contact_item ">
+                                        <div class="avatar">
+                                            <img class="img" src="images/common/head/user/2.png" alt="">
+                                        </div>
+                                        <div class="info">
+                                            <h4 class="nickname" >安佳玮</h4>
+                                        </div>
+                                    </div>
+                                </div><!-- end ngIf: item.type!="header" -->
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!--end nav view-->
+                </div>
+                <!--end panel-->
+                <!--begin chat-->
+                <!-- uiView: contentView -->
+                <div  style="height:100%;" class="">
+                    <div class="box ng-scope">
+                        <div class="box_hd with_border">
+                            <div class="title_wrap">
+                                <div class="title">详细信息</div>
+                            </div>
+                        </div>
+                        <div class="box_bd">
+                            <!-- ngIf: currentContact -->
+                            <div class="">
+                                <div class="profile">
+
+                                    <div class="avatar">
+                                        <img class="img" src="images/common/head/user/2.png" alt="">
+                                    </div>
+
+                                    <div class="nickname_area">
+                                        <h4 class="nickname">菜明</h4>
+                                        <i class="web_wechat_men"></i>
+                                        <!--<i class="web_wechat_women"></i>-->
+                                    </div>
+
+                                    <p class="signature" >所有的姗姗来迟 都是为等一个深情款款的你</p>
+
+                                    <div class="meta_area">
+                                        <div class="meta_item">
+                                            <!-- ngIf: !user.isRoomContact() -->
+                                            <label class="label ng-scope">备注：</label><!-- end ngIf: !user.isRoomContact() -->
+                                            <!-- ngIf: user.isRoomContact() -->
+                                            <p class="value" >菜明</p>
+                                        </div>
+                                        <!-- ngIf: user.Province -->
+                                        <div class="meta_item ng-scope" ng-if="user.Province">
+                                            <label class="label">地区：</label>
+                                            <p class="value">England London</p>
+                                        </div><!-- end ngIf: user.Province -->
+                                    </div>
+
+                                    <div class="action_area">
+                                        <a class="button" ui-sref="chat({userName:user.UserName})" href="#">发消息</a>
+                                    </div>
+                                    <!--<div class="profile_hd">-->
+                                    <!---->
+                                    <!--</div>-->
+                                    <!--<div class="profile_bd">-->
+                                    <!--<div class="meta">-->
+                                    <!--&lt;!&ndash; <div class="item">-->
+                                    <!--<label class="label" for="">微信号</label>-->
+                                    <!--<span class="value">{{user.UserName}}</span>-->
+                                    <!--</div> &ndash;&gt;-->
+                                    <!--<div class="item" ng-if="user.Signature">-->
+                                    <!--<span class="value" ng-bind-html="user.Signature"></span>-->
+                                    <!--</div>-->
+                                    <!--<div class="item location" ng-if="user.Province">-->
+                                    <!--<span class="value">{{user.Province}} {{user.City}}</span>-->
+                                    <!--</div>-->
+                                    <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="profile_ft">-->
+                                    <!--<div class="action">-->
+                                    <!--<a class="send" ui-sref="chat({userName:user.UserName})" href="javascript:;">发消息</a>-->
+                                    <!--</div>-->
+                                    <!--</div>-->
+                                </div>
+                            </div><!-- end ngIf: currentContact -->
+                            <!-- ngIf: !currentContact -->
+                        </div>
+                    </div>
+                </div>
+                <!--end chat-->
+            </div>
+            <p class="copyright">
+                <span>© 2018 onlyxiahui Inc. All Rights Reserved</span>
+                <span class="sep"></span>
+                <a href="http://www.oimchat.com" target="_blank">帮助</a>
+            </p>
+        </div>
+        <script type="text/javascript">
+            (function ($) {
+                $(window).on("load", function () {
+                    $.mCustomScrollbar.defaults.scrollButtons.enable = true; //enable scrolling buttons by default
+                    $.mCustomScrollbar.defaults.axis = "y"; //enable 2 axis scrollbars by default
+                    $(".scrollbar").mCustomScrollbar({theme: "dark-3"});
+                });
+            })(jQuery);
+        </script>
+    </body>
+</html>

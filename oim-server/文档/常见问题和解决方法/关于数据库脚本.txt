@@ -1,0 +1,1 @@
+1、下载好oim-server源码后，只需要新建数据库oim，表会在oim-server运行时自动建立。

@@ -1,0 +1,20 @@
+{
+  "name": "oim-web",
+  "version": "1.0.0",
+  "description": "OIM聊天。",
+  "author": "onlyxiahui@qq.com",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "test": "npm run lint"
+  },
+  "dependencies": {
+    
+  },
+  "engines": {
+   
+  },
+  "browserslist": [
+   
+  ]
+}

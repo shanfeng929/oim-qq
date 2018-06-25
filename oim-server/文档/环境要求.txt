@@ -1,0 +1,6 @@
+编译字符集：UTF-8
+
+oim-sever服务器
+操作系统：不限
+JDK：1.8.0以上
+数据库：MySQL 字符集utf8mb4

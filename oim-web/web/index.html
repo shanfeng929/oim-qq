@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>OIM</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <link rel="shortcut icon" href="favicon.ico" />
+
+        <link href="css/font-awesome.css" rel="stylesheet" type="text/css"/>
+        <link href="css/wc.css" rel="stylesheet" type="text/css"/>
+        <link href="css/oim.css" rel="stylesheet" type="text/css"/>
+
+        <link href="js/lib/SinaEmotion/jquery-sinaEmotion-2.0.0.css" rel="stylesheet" >
+        <link href="js/lib/context/context.standalone.css" rel="stylesheet" >
+        <link href="js/lib/jquery-fancybox/jquery.fancybox.css" rel="stylesheet" >
+        <link href="js/lib/jquery-custom-scrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" >
+        <link href="js/lib/dropzone/basic.min.css" rel="stylesheet" >
+        <link href="js/lib/dropzone/dropzone.min.css" rel="stylesheet" >
+
+        <script src="js/lib/jquery/jquery-3.2.1.min.js"></script>
+        <script src="js/lib/jquery-form/jquery.form.js"></script>
+        <script src="js/lib/layer/3.1.1/layer.js"></script>
+        <script src="js/lib/md5/md5.min.js"></script>
+        <script src="js/lib/dropzone/dropzone.min.js"></script>
+        <script src="js/lib/context/context.js"></script>
+        <script src="js/lib/jquery-fancybox/jquery.fancybox.js"></script>
+        <script src="js/lib/SinaEmotion/jquery-only-sina-emotion-2.0.0.js" type="text/javascript"></script>
+        <script src="js/lib/jquery-custom-scrollbar/jquery.mCustomScrollbar.js"></script>
+
+        <script src="js/im/app/global.js" type="text/javascript"></script>
+
+        <script src="js/im/common/common.base.js" type="text/javascript"></script>
+        <script src="js/im/common/common.jquery.js" type="text/javascript"></script>
+        <script src="js/im/common/common.util.js" type="text/javascript"></script>
+        <script src="js/im/common/im.common.lib.js" type="text/javascript"></script>
+        <script src="js/im/common/socket.js" type="text/javascript"></script>
+
+        <script src="js/im/im/im.base.js" type="text/javascript"></script>
+        <script src="js/im/im/in.net.server.js" type="text/javascript"></script>
+
+        <script src="js/im/ui/view.common.js" type="text/javascript"></script>
+        <script src="js/im/ui/view.main.js" type="text/javascript"></script>
+        <script src="js/im/ui/view.impl.js"></script>
+
+        <script src="js/im/business/common/im.action.js" type="text/javascript"></script>
+        <script src="js/im/business/common/im.api.common.js" type="text/javascript"></script>
+        <script src="js/im/business/common/im.api.js" type="text/javascript"></script>
+        <script src="js/im/business/common/im.box.js" type="text/javascript"></script>
+        <script src="js/im/business/common/im.context.js" type="text/javascript"></script>
+        <script src="js/im/business/common/im.manager.js" type="text/javascript"></script>
+        <script src="js/im/business/common/im.sender.js" type="text/javascript"></script>
+
+        <script src="js/im/business/impl/im.service.js" type="text/javascript"></script>
+        <script src="js/im/business/impl/im.controller.js" type="text/javascript"></script>
+
+        <script src="js/im/app/app.main.js" type="text/javascript"></script>
+        <script src="js/im/app/app.functon.js"></script>
+        <style>
+            .mCSB_inside > .mCSB_container {
+                margin-right: 0px; 
+            }
+        </style>
+    </head>
+    <body>
+        <div id="login_pane" class="login" style="display: none;">
+            <!--begin login_box-->
+            <div class="login_box">
+                <div>
+                    <!--begin info-->
+                    <div id="login_data_pane" class="login-box" style="display: none;">
+                        <h3>用户登录</h3>
+                        <div class="login-input-outer">
+                            <span class="login-user-icon"></span>
+                            <input id="account" class="login-text" type="text" placeholder="请输入账户">
+                        </div>
+                        <div class="login-input-outer">
+                            <span class="login-password-icon"></span>
+                            <input id="password" class="login-text" style="position:absolute; z-index:100;" value="" type="password" placeholder="请输入密码">
+                        </div>
+                        <div id="login_button" class="login-bottom">
+                            <a onclick="login();" class="login-action-button login-submit" href="javascript:;" style="color: #FFFFFF">登录</a>
+                        </div>
+                        <p style="color:#000000">账号：10000-10010密码：123456</p>
+                    </div>
+                    <!--end info-->
+                    <!--begin waiting-->
+                    <div id="login_waiting_pane" class="login-box" style="display: none;">
+                        <h3>登录中</h3>
+                        <div style="vertical-align: middle; text-align: center; margin-top: 30px;">
+                            <div>
+                                <img src="images/login/loading_312_4.gif" alt=""/>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end waiting-->
+                </div>
+            </div>
+            <!--end login_box-->
+            <!--begin lang-->
+            <div class="lang">
+                <div></div>
+            </div>
+            <!--end lang-->
+            <!--begin copyright-->
+            <div class="copyright">
+                <p class="desc">© 2018 onlyxiahui Inc. All Rights Reserved</p>
+            </div>
+            <!--end copyright-->
+        </div>
+        <div id="main_pane" style="display: none;" class="main">
+            <div id="chat_pane" class="main_inner" >
+                <div class="sidebar">
+                    <div class="sidebar-tab">
+                        <ul>
+                            <li id="chat_tab">
+                                <div class="wrap">
+                                    <img class="sidebar-tab-icon" height="36" width="36" alt="消息列表" src="images/main/tab/message_selected.png" />
+                                    <div id="chat_tab_red" ></div>
+                                </div>
+                            </li>
+                            <li id="user_tab">
+                                <div class="wrap">
+                                    <img class="sidebar-tab-icon" height="36" width="36" alt="通讯录" src="images/main/tab/user_normal.png" />
+                                </div>
+                            </li>
+                            <li id="group_tab">
+                                <div class="wrap">
+                                    <img class="sidebar-tab-icon" height="36" width="36" alt="应用列表" src="images/main/tab/group_normal.png"/>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-tab-more" id="tab-more" >
+                        <a id="bottom_menu" href="javascript:void(0);">
+                            <img src="images/main/tab/button_menu.png" alt=""/>
+                        </a>
+                    </div>
+                </div>
+
+                <!--begin panel-->
+                <div class="panel">
+                    <!--begin header-->
+                    <div class="header">
+                        <div class="avatar">
+                            <img id="own_user_head" class="img" src="images/common/head/user/1.png" alt="" >
+                        </div>
+                        <div class="info">
+                            <h3 class="nickname">
+                                <span id="own_nickname" class="display_name">忧郁de星辰</span>
+                                <a class="opt" href="javascript:;" ><i class="web_wechat_add"></i></a>
+                            </h3>
+                            <p id="own_signature" style="display: none;"></p>
+                        </div>
+                    </div>
+                    <!--end header-->
+                    <!--begin search-->
+                    <div class="search_bar" id="search_bar">
+                        <i class="web_wechat_search"></i>
+                        <input id="find_text_input" onfocus="showFind()" onkeyup="showFindResult()" class="frm_search" type="text" placeholder="搜索">
+                        <span style="position:absolute;top: 7px;left: 224px;">
+                            <img id="find_switch" src="images/main/search/empty.png" onclick="hideFind()" alt=""/>
+                        </span>
+                        <div id="show_find_pane" class="mmpop recommendation" tabindex="-1">
+                            <div class="scroll-wrapper contacts scrollbar-dynamic" style="position: relative;">
+                                <div class="contacts scrollbar-dynamic scroll-content scroll-scrolly_visible" style="margin-bottom: 0px; margin-right: 0px;">
+                                    <ul id="find_result_list" class="list-node-item" >
+
+                                    </ul>
+                                </div>              
+                            </div>
+                        </div>
+                    </div>
+                    <!--end search-->
+                    <!--begin tab-->
+                    <div class="tab" style="padding-bottom: 16px;">
+
+                    </div>
+                    <!--end tab-->
+
+                    <!--begin nav view-->
+                    <!-- uiView: navView -->
+                    <div class="nav_view"  style="visibility: visible; width: auto;">
+
+                        <div id="chat_tab_pane" class="scroll-wrapper chat_list scrollbar">
+                            <ul id="chat_root" >
+
+                            </ul>
+                        </div>
+
+                        <div id="user_tab_pane" class="scroll-wrapper contact_list scrollbar">
+                            <div id="user_root" class=" "></div>
+                        </div>
+                        <div id="group_tab_pane" class="scroll-wrapper contact_list scrollbar">
+                            <div id="group_root" class=" "></div>
+                        </div>
+                    </div>
+                    <!--end nav view-->
+                </div>
+                <!--end panel-->
+                <!--begin chat-->
+                <!-- uiView: contentView -->
+                <div  style="height:100%;" class="">
+                    <div class="box chat">
+                        <div id="chat_show_pane" >
+                            <!--begin BD-->
+                            <div class="scroll-wrapper box_bd chat_bd scrollbar-dynamic" style="position: absolute;">
+                                <div class="box_bd chat_bd scrollbar-dynamic scroll-content" style="margin-bottom: 0px; margin-right: 0px; height: 369px;">
+                                    <div  class="message_empty">
+                                        <i class="web_wechat_nomes_icon" ></i>
+                                        <p class="">暂时没有新消息</p>
+                                        <p class="">未选择聊天</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end BD-->
+                        </div>
+
+                        <div id="user_show_pane" style="display: none;">
+                            <div class="box_hd">
+                                <div class="title_wrap">
+                                    <div class="title">详细信息</div>
+                                </div>
+                            </div>
+                            <div class="box_bd">
+                                <!-- ngIf: currentContact -->
+                                <!-- ngIf: !currentContact -->
+                                <div class="empty">
+                                    <i class="web_wechat_no_contect"></i>
+                                </div><!-- end ngIf: !currentContact -->
+                            </div>
+                        </div>
+
+                        <div id="group_show_pane" style="display: none;">
+                            <div class="box_hd">
+                                <div class="title_wrap">
+                                    <div class="title">详细信息</div>
+                                </div>
+                            </div>
+                            <div class="box_bd">
+                                <!-- ngIf: currentContact -->
+                                <!-- ngIf: !currentContact -->
+                                <div class="empty">
+                                    <i class="web_wechat_no_contect"></i>
+                                </div><!-- end ngIf: !currentContact -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--end chat-->
+            </div>
+            <p class="copyright">
+                <span>© 1998 - 2018 OIM Inc. All Rights Reserved</span>
+                <span class="sep"></span>
+                <a href="http://www.oimchat.com" target="_blank">帮助</a>
+            </p>
+        </div>
+
+        <audio id="audio-message" src="sound/msg_g.wav" preload="auto"></audio>
+        <div style="display: none;width: 100%;"  id="update_user_info" class="modified">
+            <div style="width: 100%;text-align: center;">
+                <div class="modified-img">
+                    <img  id="user_data_head" src="" alt="">
+                </div>
+                <div class="modified-information">
+                    <ul>
+                        <li><label>账号：</label><input id="user_data_account" type="text" disabled></li>
+                        <li><label>昵称：</label><input id="user_data_nickname" type="text"></li>
+                        <li><label>个性签名：</label><input id="user_data_signature" type="text"></li>
+                        <li><label>手机：</label><input id="user_data_mobile" type="text"></li>
+                        <li><label>Email：</label><input id="user_data_email" type="text"></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <script type="text/javascript">
+            (function ($) {
+                $(window).on("load", function () {
+                    $.mCustomScrollbar.defaults.scrollButtons.enable = true; //enable scrolling buttons by default
+                    $.mCustomScrollbar.defaults.axis = "y"; //enable 2 axis scrollbars by default
+                    $(".scrollbar").mCustomScrollbar({theme: "dark-3"});
+                });
+            })(jQuery);
+        </script>
+    </body>
+</html>

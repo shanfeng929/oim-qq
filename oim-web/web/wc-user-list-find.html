@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>OIM</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <link rel="shortcut icon" href="favicon.ico" />
+        <link href="css/wc.css" rel="stylesheet" type="text/css"/>
+        <link href="js/lib/jquery-custom-scrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" >
+
+        <script src="js/lib/jquery/jquery-3.2.1.min.js"></script>
+        <script src="js/lib/jquery-custom-scrollbar/jquery.mCustomScrollbar.js"></script>
+    </head>
+    <body>
+
+        <div class="main">
+            <div class="main_inner" >
+                <!--begin panel-->
+                <div class="panel">
+                    <!--begin header-->
+                    <div class="header">
+                        <div class="avatar">
+                            <img class="img" src="images/common/head/user/1.png" alt="" >
+                        </div>
+                        <div class="info">
+                            <h3 class="nickname">
+                                <span class="display_name">忧郁de星辰</span>
+                                <a class="opt" href="javascript:;" ><i class="web_wechat_add"></i></a>
+                            </h3>
+                        </div>
+                    </div>
+                    <!--end header-->
+                    <!--begin search-->
+                    <div class="search_bar" id="search_bar">
+                        <i class="web_wechat_search"></i>
+                        <input class="frm_search" type="text" placeholder="搜索">
+                        <div id="mmpop14" class="mmpop recommendation" tabindex="-1">
+                            <div class="scroll-wrapper contacts scrollbar-dynamic" style="position: relative;">
+                                <div class="contacts scrollbar-dynamic scroll-content scroll-scrolly_visible" style="margin-bottom: 0px; margin-right: 0px; height: 420px;">
+                                    <!--data-height-calc="heightCalc"-->
+                                    <div class="ng-scope">
+                                        <div class="top-placeholder ng-scope" style="height: 0px;"></div>
+                                        <!-- ngRepeat: item in allContacts -->
+                                        <div class="">
+                                            <!-- ngIf: item.type=="header" -->
+                                            <h4 class="contact_title first">好友</h4><!-- end ngIf: item.type=="header" -->
+                                            <!-- ngIf: item.type!="header" -->
+                                        </div><!-- end ngRepeat: item in allContacts -->
+                                        <div class="">
+                                            <!-- ngIf: item.type=="header" -->
+                                            <!-- ngIf: item.type!="header" -->
+                                            <div class="">
+                                                <!-- ngIf: showOrderSymbol&&user.MMC -->
+                                                <div class="contact_item on" >
+                                                    <div class="avatar">
+                                                        <img class="img" src="" alt="">
+                                                    </div>
+                                                    <div class="info">
+                                                        <h4 class="nickname" >卜美兰</h4>
+                                                    </div>
+                                                </div>
+                                            </div><!-- end ngIf: item.type!="header" -->
+                                        </div>
+                                        <!-- end ngRepeat: item in allContacts -->
+                                        <div class="">
+                                            <!-- ngIf: item.type=="header" -->
+                                            <h4 class="contact_title">群组</h4><!-- end ngIf: item.type=="header" -->
+                                            <!-- ngIf: item.type!="header" -->
+                                        </div>
+                                        <div class="">
+                                            <!-- ngIf: item.type=="header" -->
+                                            <!-- ngIf: item.type!="header" -->
+                                            <div class="">
+                                                <!-- ngIf: showOrderSymbol&&user.MMC -->
+                                                <div class="contact_item">
+                                                    <div class="avatar">
+                                                        <img class="img" src="" alt="">
+                                                    </div>
+                                                    <div class="info">
+                                                        <h4 class="nickname" >崇文花园新能源车充电交流</h4>
+                                                    </div>
+                                                </div>
+                                            </div><!-- end ngIf: item.type!="header" -->
+                                        </div>
+                                        <!-- end ngRepeat: item in allContacts -->
+                                        <div class="bottom-placeholder" style="height: 991px;"></div></div>
+                                    <!-- ngIf: !allContacts.length -->
+                                </div>              
+                            </div>
+                        </div>
+                    </div>
+                    <!--end search-->
+                    <!--begin tab-->
+                    <div class="tab">
+                        <div class="tab_item">
+                            <a class="chat" title="聊天" href="#"><i class="web_wechat_tab_chat web_wechat_tab_chat_hl" ></i></a>
+                        </div>
+                        <div class="tab_item" >
+                            <a class="chat" title="阅读" href="#"><i class="web_wechat_tab_public" ></i></a>
+                        </div>
+                        <div class="tab_item">
+                            <a class="chat" title="通讯录" href="#"><i class="web_wechat_tab_friends"></i></a>
+                        </div>
+                    </div>
+                    <!--end tab-->
+
+                    <!--begin nav view-->
+                    <!-- uiView: navView -->
+                    <div  id="navView" class=""></div>
+
+                    <div class="nav_view"  style="visibility: visible; width: auto;">
+
+                        <div class="scroll-wrapper contact_list scrollbar">
+
+                            <div class="">
+                                <!-- ngIf: item.type=="header" -->
+                                <h4 class="contact_title">群组</h4><!-- end ngIf: item.type=="header" -->
+                                <!-- ngIf: item.type!="header" -->
+                            </div>
+                            <div class="">
+                                <!-- ngIf: item.type=="header" -->
+                                <!-- ngIf: item.type!="header" -->
+                                <div class="">
+                                    <!-- ngIf: showOrderSymbol&&user.MMC -->
+                                    <div class="contact_item " >
+                                        <div class="avatar">
+                                            <img class="img" src="images/common/head/user/2.png" alt="">
+                                        </div>
+                                        <div class="info">
+                                            <h4 class="nickname" >1202麻将室</h4>
+                                        </div>
+                                    </div>
+                                </div><!-- end ngIf: item.type!="header" -->
+                            </div>
+
+                            <div class="">
+                                <!-- ngIf: item.type=="header" -->
+                                <!-- ngIf: item.type!="header" -->
+                                <div class="">
+                                    <!-- ngIf: showOrderSymbol&&user.MMC -->
+                                    <div class="contact_item ">
+                                        <div class="avatar">
+                                            <img class="img" src="images/common/head/user/2.png" alt="">
+                                        </div>
+                                        <div class="info">
+                                            <h4 class="nickname">A-Griezmann,熟悉or陌生,chenzdh,烙灵,卧狼</h4>
+                                        </div>
+                                    </div>
+                                </div><!-- end ngIf: item.type!="header" -->
+                            </div>
+
+                            <div class="">
+                                <!-- ngIf: item.type=="header" -->
+                                <h4 class="contact_title">A</h4>
+                                <!-- end ngIf: item.type=="header" -->
+                                <!-- ngIf: item.type!="header" -->
+                            </div>
+
+                            <div class="">
+                                <!-- ngIf: item.type=="header" -->
+                                <!-- ngIf: item.type!="header" -->
+                                <div class=" active">
+                                    <!-- ngIf: showOrderSymbol&&user.MMC -->
+                                    <div class="contact_item ">
+                                        <div class="avatar">
+                                            <img class="img" src="images/common/head/user/2.png" alt="">
+                                        </div>
+                                        <div class="info">
+                                            <h4 class="nickname" >安佳玮</h4>
+                                        </div>
+                                    </div>
+                                </div><!-- end ngIf: item.type!="header" -->
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!--end nav view-->
+                </div>
+                <!--end panel-->
+                <!--begin chat-->
+                <!-- uiView: contentView -->
+                <div  style="height:100%;" class="">
+                    <div class="box">
+                        <div class="box_hd">
+                            <div class="title_wrap">
+                                <div class="title">详细信息</div>
+                            </div>
+                        </div>
+                        <div class="box_bd">
+                            <!-- ngIf: currentContact -->
+                            <!-- ngIf: !currentContact -->
+                            <div class="empty">
+                                <i class="web_wechat_no_contect"></i>
+                            </div><!-- end ngIf: !currentContact -->
+                        </div>
+                    </div>
+                </div>
+                <!--end chat-->
+            </div>
+            <p class="copyright">
+                <span>© 2018 onlyxiahui Inc. All Rights Reserved</span>
+                <span class="sep"></span>
+                <a href="http://www.oimchat.com" target="_blank">帮助</a>
+            </p>
+        </div>
+        <script type="text/javascript">
+            (function ($) {
+                $(window).on("load", function () {
+                    $.mCustomScrollbar.defaults.scrollButtons.enable = true; //enable scrolling buttons by default
+                    $.mCustomScrollbar.defaults.axis = "y"; //enable 2 axis scrollbars by default
+                    $(".scrollbar").mCustomScrollbar({theme: "dark-3"});
+                });
+            })(jQuery);
+        </script>
+    </body>
+</html>

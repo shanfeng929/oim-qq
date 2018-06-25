@@ -1,0 +1,3 @@
+1、更新源码后，发现已经有了only-*开头的jar包，但是有些类没有、方法没有、或者方法不对等，有可能是我修改了only-相关的代码，所以去本地maven库中把相应的文件或者整个com\only和com\onlyxiahui整个目录删除再执行maven update project
+通常位置在
+用户目录\.m2\xxxxxx

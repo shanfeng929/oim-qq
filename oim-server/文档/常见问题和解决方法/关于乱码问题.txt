@@ -1,0 +1,47 @@
+一、因为为了可以存emoji表情，所以数据库采用utf8mb4编码
+如果你数据库使用utf8就会中文乱码，这是数据库配置url配置的后面少了characterEncoding=UTF8
+如果不想修改编码就用utf8编码，请修改数据库url配置“？”问号后面在后面部分改为
+xxxx?useUnicode=true&characterEncoding=UTF8&zeroDateTimeBehavior=convertToNull
+不修改的问题是不能存emoji表情
+二、关于修改为utf8mb4编码也会乱码
+
+修改数据库编码的教程就不写了，这里修改编码不是在新建库的时候选择编码，已经使用utf8或者别的编码后再修改也是无效的
+
+
+一定看清楚，修改编码是修改整个MySQL数据程序的编码，具体教程自己百度
+
+MySQL8.0以前版本 5.6以上
+1、修改mysql的配置文件，windows下的为my.ini(linux下的为my.cnf)，修改的内容都一样。
+
+
+
+[client]
+
+default-character-set=utf8mb4
+
+[mysql]
+
+default-character-set=utf8mb4
+
+[mysqld]
+
+character-set-server=utf8mb4
+
+collation-server=utf8mb4_unicode_ci
+
+
+
+2、将数据库中对应的字段，改为utf8mb4_general_ci
+
+
+
+3、我的项目中将数据库链接url配置到properties文件中。在这里一定要修改的内容就是将characterEncoding=utf-8去掉。
+
+
+mac 没有默认配置文件
+1、在Mac
+ OS X 中默认是没有my.cnf 文件，如果需要对MySql 进行定制，拷贝/usr/local/mysql/support-files/目录中任意一个.cnf 文件粘贴到/etc目录下，并且重命名为my.cnf
+ ，然后修改 my.cnf 即可进行定制了
+
+
+修改后要重启

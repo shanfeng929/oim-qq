@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>OIM接口</title>
+        <link rel="shortcut icon" href="favicon.ico" />
+        <link rel="Bookmark" href="favicon.ico" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="js/ztree/css/metro/metroStyle.css" type="text/css">
+        
+        <script type="text/javascript" src="js/jquery/jquery-1.4.4.min.js"></script>
+		<script type="text/javascript" src="js/ztree/jquery.ztree.all.min.js"></script>
+		
+		<script type="text/javascript">
+
+		var zTree;
+			var demoIframe;
+		
+			var setting = {
+				view: {
+					dblClickExpand: false,
+					showLine: true,
+					selectedMulti: false
+				},
+				data: {
+					simpleData: {
+						enable:true,
+						idKey: "id",
+						pIdKey: "pId",
+						rootPId: ""
+					}
+				},
+				callback: {
+					beforeClick: function(treeId, treeNode) {
+						var zTree = $.fn.zTree.getZTreeObj("tree");
+						if (treeNode.isParent) {
+							zTree.expandNode(treeNode);
+							return false;
+						} else {
+							demoIframe.attr("src",treeNode.file + ".html");
+							return true;
+						}
+					}
+				}
+			};
+		
+			var zNodes =[
+			
+				{id:"1", pId:"0", name:"基础接口", open:true},
+				{id:"2", pId:"0", name:"聊天接口", open:true},
+				
+				{id:"201", pId:"2", name:"请求服务接口", open:true},
+				{id:"1.000", pId:"201", name:"系统服务接口", open:true},
+				
+				{id:"1.1.0001", pId:"1.000", name:"心跳请求", file:"api/im/1/1.000/1.1.0001"}
+			
+				
+			];
+		
+			$(document).ready(function(){
+				var t = $("#tree");
+				t = $.fn.zTree.init(t, setting, zNodes);
+				demoIframe = $("#testIframe");
+				demoIframe.bind("load", loadReady);
+				var zTree = $.fn.zTree.getZTreeObj("tree");
+				zTree.selectNode(zTree.getNodeByParam("id", 101));
+		
+			});
+		
+			function loadReady() {
+				var bodyH = demoIframe.contents().find("body").get(0).scrollHeight,
+				htmlH = demoIframe.contents().find("html").get(0).scrollHeight,
+				maxH = Math.max(bodyH, htmlH), minH = Math.min(bodyH, htmlH),
+				h = demoIframe.height() >= maxH ? minH:maxH ;
+				if (h < 530) h = 530;
+				demoIframe.height(h);
+			}
+		
+		</script>
+    </head>
+    <body>
+        <table border=0 height=100% align=left>
+			<tr>
+				<td width=260px align=left valign=top style="border-right: #999999 1px dashed">
+					<ul id="tree" class="ztree" style="width:260px; overflow:auto;"></ul>
+				</td>
+				<td width=770px align=left valign=top><iframe id="testIframe" name="testIframe" frameborder=0 scrolling=auto width=100%  height=100% src="api/index.html"></iframe></td>
+			</tr>
+		</table>
+    </body>
+</html>

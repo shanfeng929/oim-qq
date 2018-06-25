@@ -1,0 +1,23 @@
+因为maven的全局设置会影响我私有jar包的下载，通常可以用以下方法解决
+
+1、注释掉镜像服务配置
+
+
+通常位置
+用户目录\.m2\settings.xml
+
+<mirrors>
+
+<!-- xxxxx各种镜像服务配置 -->
+</mirrors>
+然后重新maven update project
+
+如果不行就是使用下面方法
+
+
+2、可以直接下载jar文件，然后放到本地库
+https://github.com/onlyxiahui/maven
+https://gitee.com/onlyxiahui/maven
+
+3、下载源码自己编译
+https://gitee.com/onlylibrary

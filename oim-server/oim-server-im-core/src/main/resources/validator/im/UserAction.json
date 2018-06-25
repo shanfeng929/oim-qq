@@ -1,0 +1,66 @@
+[
+    {
+        "请求添加好友": "",
+        "name": "1.101/1.1.0015",
+        "validator": {
+            "request": {
+                "validators": [
+                    {
+                        "validator": "notNull"
+                    }
+                ],
+                "nodes": {
+                    "requestUserId": {
+                        "validators": [
+                            {
+                                "validator": "notBlank",
+                                "message": "不能为空!"
+                            }
+                        ]
+                    },"addUserId": {
+                        "validators": [
+                            {
+                                "validator": "notBlank",
+                                "message": "不能为空!"
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    {
+        "处理被添加好友": "",
+        "name": "1.101/1.1.0016",
+        "validator": {
+            "request": {
+                "validators": [
+                    {
+                        "validator": "notNull"
+                    }
+                ],
+                "nodes": {
+                    "requestId": {
+                        "validators": [
+                            {
+                                "validator": "notBlank",
+                                "message": "不能为空!"
+                            }
+                        ]
+                    },"handleType": {
+                        "validators": [
+                            {
+                                "validator": "notBlank",
+                                "message": "不能为空!"
+                            },
+		                    {
+		                        "validator": "inStringArray",
+		                        "value": ["1","2","3"]
+		                    }
+                        ]
+                    }
+                }
+            }
+        }
+    }
+]

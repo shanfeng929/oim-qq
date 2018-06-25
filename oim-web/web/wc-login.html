@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>OIM</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <link rel="shortcut icon" href="favicon.ico" />
+        <link href="css/wc.css" rel="stylesheet" type="text/css"/>
+        <link href="css/oim.css" rel="stylesheet" type="text/css"/>
+
+        <script src="js/lib/jquery/jquery-3.2.1.min.js"></script>
+        <script src="js/lib/jquery-custom-scrollbar/jquery.mCustomScrollbar.js"></script>
+    </head>
+    <body>
+        <div class="login">
+            <!--begin login_box-->
+            <div class="login_box">
+
+                <div id="login_pane" style="display: block;">
+                    <!--begin info-->
+                    <div id="login_data_pane" class="login-box" style="display: block;">
+                        <h3>用户登录</h3>
+                        <div class="login-input-outer">
+                            <span class="login-user-icon"></span>
+                            <input id="account" class="login-text" type="text" placeholder="请输入账户">
+                        </div>
+                        <div class="login-input-outer">
+                            <span class="login-password-icon"></span>
+                            <input id="password" class="login-text" style="position:absolute; z-index:100;" value="" type="password" placeholder="请输入密码">
+                        </div>
+                        <div id="login_button" class="login-bottom">
+                            <a onclick="login();" class="login-action-button login-submit" href="javascript:;" style="color: #FFFFFF">登录</a>
+                        </div>
+                    </div>
+                    <!--end info-->
+                    <!--begin waiting-->
+                    <div id="login_waiting_pane" class="login-box" style="display: none;">
+                        <h3>登录中</h3>
+                        <div style="vertical-align: middle; text-align: center; margin-top: 30px;">
+                            <div>
+                                <img src="images/login/loading_312_4.gif" alt=""/>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end waiting-->
+                </div>
+            </div>
+            <!--end login_box-->
+            <!--begin lang-->
+            <div class="lang">
+            </div>
+            <!--end lang-->
+            <!--begin copyright-->
+            <div class="copyright">
+                <p class="desc">© 2018 onlyxiahui Inc. All Rights Reserved</p>
+            </div>
+            <!--end copyright-->
+        </div>
+    </body>
+</html>

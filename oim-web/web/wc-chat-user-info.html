@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>OIM</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <link rel="shortcut icon" href="favicon.ico" />
+        <link href="css/wc.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+
+        <div class="main">
+            <div class="main_inner" >
+                <!--begin panel-->
+                <div class="panel">
+                    <!--begin header-->
+                    <div class="header">
+                        <div class="avatar">
+                            <img class="img" src="images/common/head/user/1.png" alt="" >
+                        </div>
+                        <div class="info">
+                            <h3 class="nickname">
+                                <span class="display_name">忧郁de星辰</span>
+                                <a class="opt" href="javascript:;" ><i class="web_wechat_add"></i></a>
+                            </h3>
+                        </div>
+                    </div>
+                    <!--end header-->
+                    <!--begin search-->
+                    <div class="search_bar" id="search_bar">
+                        <i class="web_wechat_search"></i>
+                        <input class="frm_search" type="text" placeholder="搜索">
+                    </div>
+                    <!--end search-->
+                    <!--begin tab-->
+                    <div class="tab">
+                        <div class="tab_item">
+                            <a class="chat" title="聊天" href="#"><i class="web_wechat_tab_chat web_wechat_tab_chat_hl" ></i></a>
+                        </div>
+                        <div class="tab_item" >
+                            <a class="chat" title="阅读" href="#"><i class="web_wechat_tab_public" ></i></a>
+                        </div>
+                        <div class="tab_item">
+                            <a class="chat" title="通讯录" href="#"><i class="web_wechat_tab_friends"></i></a>
+                        </div>
+                    </div>
+                    <!--end tab-->
+
+                    <!--begin nav view-->
+                    <!-- uiView: navView -->
+                    <div  id="navView" class=""></div>
+
+                    <div class="nav_view"  style="visibility: visible; width: auto;">
+
+                    </div>
+                    <!--end nav view-->
+                </div>
+                <!--end panel-->
+                <!--begin chat-->
+                <!-- uiView: contentView -->
+                <div  style="height:100%;" class="">
+                    <div id="chatArea" class="box chat">
+
+                        <!--begin HD-->
+                        <div class="box_hd">
+                            <!--<a class="ext web_wechat_addfriend" href="javascript:;" ng-click="showChatRoomMembers($event)" ng-show="currentContact.isRoomContact()" title="成员"></a>-->
+                            <!--<a class="ext web_wechat_addfriend" href="javascript:;" ng-click="showProfile($event)" ng-show="!currentContact.isRoomContact()" title="Profile"></a>-->
+                            <div id="chatRoomMembersWrap">
+
+                                <div id="mmpop_chatroom_members" class="mmpop ng-scope members_wrp slide-down" tabindex="-1" style="">
+                                    <div class=" members">
+                                        <div  class="members_inner ng-scope">
+                                            <div class="member opt">
+                                                <i class="web_wechat_add_friends" ng-click="createChatroom()"></i>
+                                            </div>
+                                            <div class="member">
+                                                <img class="avatar" src="images/common/head/user/1.png"  alt="" title="">
+                                                <p class="nickname" >陈娅楠</p>
+                                            </div>
+                                            <div class="member">
+                                                <img class="avatar" src="images/common/head/user/1.png"  alt="" title="">
+                                                <p class="nickname" >陈娅楠</p>
+                                            </div>
+                                            <div class="member">
+                                                <img class="avatar" src="images/common/head/user/1.png"  alt="" title="">
+                                                <p class="nickname" >陈娅楠</p>
+                                            </div>
+                                            <div class="member">
+                                                <img class="avatar" src="images/common/head/user/1.png"  alt="" title="">
+                                                <p class="nickname" >陈娅楠</p>
+                                            </div>
+                                        </div><!-- end ngIf: !currentContact.isRoomContact() -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="title_wrap">
+                                <div class="title poi" >
+                                    <a class="title_name ng-binding" data-username="" ></a>
+                                    <!-- ngIf: currentContact.MemberList.length -->
+                                    <i class="web_wechat_down_icon ng-hide" ></i>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end HD-->
+                        <!--begin BD-->
+                        <div class="scroll-wrapper box_bd chat_bd scrollbar-dynamic" style="position: absolute;">
+                            <div class="box_bd chat_bd scrollbar-dynamic scroll-content" style="margin-bottom: 0px; margin-right: 0px; height: 369px;">
+                                <div  class="message_empty ">
+                                    <i class="web_wechat_nomes_icon" ></i>
+                                    <p class="ng-hide">暂时没有新消息</p>
+                                    <p class="">未选择聊天</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end BD-->
+                        <!--begin FT-->
+                        <div class="box_ft  ng-hide" >
+                            <div class="toolbar" id="tool_bar">
+                                <a class="web_wechat_face" href="javascript:;" title="表情"></a>
+                                <a class="web_wechat_screencut ng-isolate-scope"  href="javascript:;" title="截屏"></a>
+                                <a class="web_wechat_pic js_fileupload ng-isolate-scope webuploader-container"  title="图片和文件">
+                                    <div class="webuploader-pick"></div>
+                                    <div id="rt_rt_1c39vaq8v1jb81kac8rs1qeldfe1" style="position: absolute; top: 0px; left: 0px; width: 30px; height: 30px; overflow: hidden; bottom: auto; right: auto;">
+                                        <input type="file" name="file" class="webuploader-element-invisible" >
+                                        <label style="opacity:0;width:100%;height:100%;display:block;cursor:pointer;background:rgb(255, 255, 255);"></label>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="content ng-isolate-scope" >
+                                <pre id="editArea" contenteditable-directive="" mm-paste="" class="flex edit_area ng-isolate-scope ng-pristine ng-valid" contenteditable="true" ng-blur="editAreaBlur($event)" ng-model="editAreaCtn" ng-click="editAreaClick($event)" ng-keyup="editAreaKeyup($event)" ng-keydown="editAreaKeydown($event)"></pre>
+                                <span class="caret_pos_helper" id="caretPosHelper"></span>
+                            </div>
+
+                            <div class="action">
+                                <span class="desc ">按下Shift+Enter换行</span>
+                                <a class="btn btn_send" href="javascript:;" ng-click="sendTextMessage()">发送</a>
+                            </div>
+                        </div>
+                        <!--end FT-->
+                        <div id="J_CatchDrop" class="catch-drop-area"></div>
+                    </div>
+                </div>
+                <!--end chat-->
+            </div>
+            <p class="copyright">
+                <span>© 2018 onlyxiahui Inc. All Rights Reserved</span>
+                <span class="sep"></span>
+                <a href="http://www.oimchat.com" target="_blank">帮助</a>
+            </p>
+        </div>
+    </body>
+</html>
