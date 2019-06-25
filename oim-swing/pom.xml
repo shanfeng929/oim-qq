@@ -109,11 +109,11 @@
 		    <version>3.4</version>
 		</dependency>
 		<!-- only start -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>com.only</groupId>
 			<artifactId>only-feel</artifactId>
 			<version>1.0.1</version>
-		</dependency>
+		</dependency> -->
 		<dependency>
 			<groupId>com.only</groupId>
 			<artifactId>oim-client-core</artifactId>
